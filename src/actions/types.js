@@ -1,0 +1,1 @@
+export const SIMULATE_TRADE = 'SIMULATE_TRADE';
