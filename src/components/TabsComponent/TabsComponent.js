@@ -8,8 +8,8 @@ import Container from '@material-ui/core/Container';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import VariableRiskContainerComponent from './VariableRiskContainerComponent';
-import FixedRiskContainerCompnent from './FixedRiskContainerComponent';
+import VariableRiskContainerComponent from './VariableRiskComponent/VariableRiskContainerComponent';
+import FixedRiskContainerCompnent from './FixedRiskComponent/FixedRiskContainerComponent';
 
 function TabsComponent() {
   const [value, setValue] = React.useState(0);

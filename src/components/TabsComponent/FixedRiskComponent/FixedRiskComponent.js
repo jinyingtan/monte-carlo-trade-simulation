@@ -4,6 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
@@ -21,16 +23,17 @@ const styles = theme => ({
   }
 })
 
-function VariableRiskComponent(props) {
+function FixedRiskComponent(props) {
   const { value, index, dir, classes } = props;
   const { initialPortfolioValue, setInitialPortfolioValue } = props;
   const { noOfTrades, setNoOfTrades } = props;
   const { rewardRiskRatio, setRewardRiskRatio } = props;
-  const { percentageRisk, setPercentageRisk } = props;
+  const { dollarRisk, setDollarRisk } = props;
+  const { isDoubleRisk, setIsDoubleRisk } = props
   const { percentageWinRate, setPercentageWinRate } = props;
   const { percentageBreakEvenRate, setPercentageBreakEvenRate } = props;
-  const { setInputValue, calculate } = props;
-  
+  const { setInputValue, handleCheckboxChanges, calculate } = props;
+
   return (
     <Box
       className={classes.root}
@@ -88,15 +91,23 @@ function VariableRiskComponent(props) {
           type="number"
           className={classes.inputFields}
           InputProps={{
-            endAdornment: <InputAdornment position="end">%</InputAdornment>,
+            startAdornment: <InputAdornment position="start">$</InputAdornment>,
           }}
-          id="percentageRisk"
+          id="dollarRisk"
           helperText="per trade"
           label="Percentage Risk"
-          value={percentageRisk}
-          onChange={(event) => setInputValue(event, setPercentageRisk)}
+          value={dollarRisk}
+          onChange={(event) => setInputValue(event, setDollarRisk)}
         />
       </div>
+
+      <div className={classes.inputFieldContainer}>
+        <FormControlLabel
+          control={<Checkbox checked={isDoubleRisk} onChange={(event) => handleCheckboxChanges(event, setIsDoubleRisk)} value="isDoubleRisk" />}
+          label="Double dollar risk as portofolio doubles"
+        />
+      </div>
+
 
       <div className={classes.inputFieldContainer}>
         <TextField
@@ -142,4 +153,4 @@ function VariableRiskComponent(props) {
   );
 }
 
-export default withStyles(styles)(VariableRiskComponent)
+export default withStyles(styles)(FixedRiskComponent)
