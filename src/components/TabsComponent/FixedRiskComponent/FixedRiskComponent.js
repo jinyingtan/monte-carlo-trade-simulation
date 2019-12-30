@@ -95,7 +95,7 @@ function FixedRiskComponent(props) {
           }}
           id="dollarRisk"
           helperText="per trade"
-          label="Percentage Risk"
+          label="Dollar Risk"
           value={dollarRisk}
           onChange={(event) => setInputValue(event, setDollarRisk)}
         />
