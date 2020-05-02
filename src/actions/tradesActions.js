@@ -43,7 +43,7 @@ const generateWeighedList = (list, weight) => {
   return weighed_list;
 }
 
-//function to balance the array to exact weighted probabilties
+// function to balance the array to exact weighted probabilities
 const balanceArray = (array, winRate, breakEven, trades) => {
   let noOfOnes = 0, noOfZeros = 0, tempWinRate = Math.floor(winRate * trades), tempBreakEven = Math.floor(breakEven * trades);
   for (let i = 0; i < array.length; i++) {
@@ -57,7 +57,7 @@ const balanceArray = (array, winRate, breakEven, trades) => {
   return balanceArrayElements(array, noOfOnes, tempWinRate, noOfZeros, tempBreakEven);
 }
 
-//recursive checking of array index as the function uses a random start point on an array to search for the index
+// recursive checking of array index as the function uses a random start point on an array to search for the index
 const checkArrayIndex = (array, serachValue, startPoint) => {
   let arrayIndex = array.indexOf(serachValue, startPoint);
   if (arrayIndex < 0)
@@ -67,7 +67,7 @@ const checkArrayIndex = (array, serachValue, startPoint) => {
   }
 }
 
-//recursive functionn to balance the zero and one in the array to the win rate
+// recursive function to balance the zero and one in the array to the win rate
 const balanceArrayElements = (array, number1, validationInteger1, number2, validationInteger2) => {
   if (number1 === validationInteger1 && number2 === validationInteger2) {
     return array;
@@ -155,12 +155,12 @@ const generateTrades = (tradeParameters) => {
   const tradesSimulationList = [1, 0, -1];
   let tradesSimulation = [];
 
-  let weightedtradesSimulation = generateWeighedList(tradesSimulationList, probs);
+  let weightedTradesSimulation = generateWeighedList(tradesSimulationList, probs);
 
   for (let i = 0; i < noOfTrades; i++) {
     //to generate random number from 0 to the length of the weighted list
     //var random_num = rand(0, weightedWinLose.length-1);
-    tradesSimulation.push(weightedtradesSimulation[rand(0, weightedtradesSimulation.length - 1)]);
+    tradesSimulation.push(weightedTradesSimulation[rand(0, weightedTradesSimulation.length - 1)]);
   }
 
   // Forces the ratio to be exact to what is specified

@@ -9,7 +9,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 import VariableRiskContainerComponent from './VariableRiskComponent/VariableRiskContainerComponent';
-import FixedRiskContainerCompnent from './FixedRiskComponent/FixedRiskContainerComponent';
+import FixedRiskContainerComponent from './FixedRiskComponent/FixedRiskContainerComponent';
 
 function TabsComponent() {
   const [value, setValue] = React.useState(0);
@@ -45,7 +45,7 @@ function TabsComponent() {
           onChangeIndex={handleChangeIndex}
         >
           <VariableRiskContainerComponent value={value} index={0} dir={theme.direction} />
-          <FixedRiskContainerCompnent value={value} index={1} dir={theme.direction} />
+          <FixedRiskContainerComponent value={value} index={1} dir={theme.direction} />
         </SwipeableViews>
       </Container>
     </React.Fragment>
