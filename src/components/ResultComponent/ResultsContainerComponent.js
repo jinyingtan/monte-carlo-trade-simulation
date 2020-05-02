@@ -11,7 +11,7 @@ function ResultsContainerComponent() {
     <React.Fragment>
       {!tradeParameters.isHidden && 
         <ResultsComponent 
-          tradesParameters={tradeParameters}
+          tradeParameters={tradeParameters}
         />
       }
     </React.Fragment>

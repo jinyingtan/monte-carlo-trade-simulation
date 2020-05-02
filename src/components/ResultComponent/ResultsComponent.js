@@ -5,6 +5,7 @@ import SwipeableViews from 'react-swipeable-views';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
 import ResultsOverviewComponent from './ResultsOverviewComponent'
@@ -39,14 +40,14 @@ function ResultsComponent(props) {
       <CssBaseline />
 
       <Container maxWidth="lg" disableGutters>
-        <div>
+        <Box>
           <span className={classes.outline}></span>
           <Typography variant="h5" className={classes.resultsText}>
             Results
           </Typography>
           <span className={classes.outline}></span>
-        </div>
-        
+        </Box>
+
         <ResultsOverviewComponent tradeParameters={tradeParameters} />
         <ResultsTabsComponent tradeParameters={tradeParameters} />
       </Container>
