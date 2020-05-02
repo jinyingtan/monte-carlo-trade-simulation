@@ -3,7 +3,7 @@ import { SIMULATE_TRADE } from '../actions/types';
 const initialState = {
   trades: [],
   portfolioResults: {}, 
-  hidden: true
+  isHidden: true
 };
 
 export default function (state = initialState, action) {
@@ -13,7 +13,7 @@ export default function (state = initialState, action) {
         ...state, 
         portfolioResults: action.portfolioResults,
         trades: action.trades,
-        hidden: action.hidden 
+        isHidden: action.hidden 
       }
     default:
       return state

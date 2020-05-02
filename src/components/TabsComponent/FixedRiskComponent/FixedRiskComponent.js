@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   root: {
     padding: '2rem 0',
+    paddingLeft: '0.1rem'
   },
   inputFieldContainer: {
     marginBottom: '2rem',

@@ -275,7 +275,7 @@ export const simulateTrade = (tradeParameters) => dispatch => {
     type: SIMULATE_TRADE,
     portfolioResults: portfolioResults,
     trades: simulatedTrades,
-    hidden: false
+    isHidden: false
   }
 
   dispatch(action);

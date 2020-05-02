@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TabsComponent from "../components/TabsComponent/TabsComponent"
+import ResultsContainerComponent from "../components/ResultComponent/ResultsContainerComponent"
 
 import store from '../store';
 
@@ -22,6 +23,7 @@ const IndexPage = () => (
 
     <Provider store={store}>
       <TabsComponent />
+      <ResultsContainerComponent />
     </Provider>
     
   </Layout>
