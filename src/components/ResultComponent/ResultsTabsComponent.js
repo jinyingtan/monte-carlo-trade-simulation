@@ -8,6 +8,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 import MonthlyResultsComponent from './MonthlyResultsComponent/MonthlyResultsComponent'
+import TradesResultsComponent from './TradesResultsComponent/TradesResultsComponent'
 
 function ResultsTabsComponent(props) {
   const theme = useTheme();
@@ -48,6 +49,13 @@ function ResultsTabsComponent(props) {
             dir={theme.direction}
             portfolio={tradeParameters.portfolioResults.monthlyPortfolio} 
           />
+          <TradesResultsComponent
+            value={value} 
+            index={1} 
+            dir={theme.direction}
+            portfolio={tradeParameters.portfolioResults.portfolio}
+            trades={tradeParameters.trades}
+          /> 
         </SwipeableViews>
     </Box>
   )
