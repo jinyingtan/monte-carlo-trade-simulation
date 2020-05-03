@@ -21,8 +21,9 @@ function ResultsOverviewComponent(props) {
   const [percentageChange, setPercentageChange] = useState(0);
 
   useEffect(() => {
-    let finalValue = tradeParameters.portfolioResults.monthlyPortfolio["12"]
-    let initialValue = tradeParameters.portfolioResults.monthlyPortfolio["0"]
+    let length = tradeParameters.portfolioResults.monthlyPortfolio.length
+    let finalValue = tradeParameters.portfolioResults.monthlyPortfolio[length - 1]
+    let initialValue = tradeParameters.portfolioResults.monthlyPortfolio[0]
     let percentageDiff = (((finalValue / initialValue) - 1) * 100).toFixed(2)
     setPercentageChange(percentageDiff)
   });
@@ -32,13 +33,13 @@ function ResultsOverviewComponent(props) {
       <Grid container className={classes.gridContainer}>
         <Grid item sm={12} md={4}>
           <Typography>
-            Initial Portfolio Value: ${tradeParameters.portfolioResults.monthlyPortfolio["0"]}
+            Initial Portfolio Value: ${tradeParameters.portfolioResults.monthlyPortfolio[0]}
           </Typography>
         </Grid>
 
         <Grid item sm={12} md={4}>
           <Typography>
-            Final Portfolio Value: ${tradeParameters.portfolioResults.monthlyPortfolio["12"]}
+            Final Portfolio Value: ${tradeParameters.portfolioResults.monthlyPortfolio[tradeParameters.portfolioResults.monthlyPortfolio.length - 1]}
           </Typography>
         </Grid>
 
